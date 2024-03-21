@@ -1,4 +1,4 @@
-# example/views.py
+# projeto/views.py
 from datetime import datetime
 
 from django.http import HttpResponse
