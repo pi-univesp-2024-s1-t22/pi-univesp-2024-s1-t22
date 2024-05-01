@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h2>Aplicativo para o projeto integrador da univesp, ano 2024, primeiro semestre, grupo 22</h2>
+        <h3>NewDRE</h3>
+        <p>Hora atual: {{ current_time }}.</p>
+        <ul>
+            <li><a href="/clientes">Listagem de clientes</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </body>
+</html>
