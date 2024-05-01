@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'projeto',
     'cliente',
     'recebimento',
-    'receitaRecorrente'
+    'receitaRecorrente',
+    'despesa'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,9 @@ ROOT_URLCONF = 'vercel_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates', 
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,7 +135,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'projeto', 'static'),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'projeto', 'static'),
+    
+]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 import pymysql

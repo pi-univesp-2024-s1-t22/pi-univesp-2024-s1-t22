@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<main>
+    <table>
+        <thead>
+            <th>
+                Cliente
+            </th>
+        </thead>
+        <tbody>
+
+            {% for cliente in clientes %}
+                <tr>
+                    <td>
+                        {{ cliente.nomeCliente }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

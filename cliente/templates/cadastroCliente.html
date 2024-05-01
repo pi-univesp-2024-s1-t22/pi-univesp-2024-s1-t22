@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<main>
+    <form action="{% url 'newcliente' %}" method="post">
+        <h1>Cadastro de Clientes:</h1>
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+        {% csrf_token %}
+    </form>
+</main>
+{% endblock %}
