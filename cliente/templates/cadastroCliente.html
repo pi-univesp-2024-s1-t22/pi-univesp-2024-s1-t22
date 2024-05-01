@@ -2,8 +2,9 @@
 
 {% block conteudo %}
 <main>
+    <p><a href="/clientes">Voltar para a listagem de clientes</a></p>
+    <h1>Cadastro de Clientes</h1>
     <form action="{% url 'newcliente' %}" method="post">
-        <h1>Cadastro de Clientes:</h1>
         {{ form.as_p }}
         <button type="submit">Cadastrar</button>
         {% csrf_token %}
