@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('projeto.urls')),
-    path('', include('cliente.urls'))
+    path('', include('cliente.urls')),
+    path('', include('despesa.urls'))
 ]

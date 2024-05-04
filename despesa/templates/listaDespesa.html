@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block conteudo %}
+    <main>
+        <h2>Listagem de Despesa</h2>
+
+        <table>
+            <thead>
+                <th>
+                    Tipo Despesa
+                </th>
+                <th>
+                    Data Pagamento
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    Descrição
+                </th>
+            </thead>
+            <tbody>
+
+                {% for despesa in despesas %}
+                    <tr>
+                        <td>
+                            {{ despesa.tipoDespesa.tipo }}
+                        </td>
+                        <td>
+                            {{ despesa.dataPagamento }}
+                        </td>
+                        <td>
+                            {{ despesa.valor }}
+                        </td>
+                        <td>
+                            {{ despesa.descricao }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock %}
