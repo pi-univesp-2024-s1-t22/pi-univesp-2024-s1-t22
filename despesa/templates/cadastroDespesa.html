@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block conteudo %} 
+
+    <main>
+        <p><a href="/despesas">Voltar para a listagem de despesas</a></p>
+        <h1>Cadastro de Despesas</h1>
+
+        <form action="{% url 'newdespesa' %}" method="post">
+
+            {{ form.as_p }}
+
+            <button type="submit">Cadastrar</button>
+            {% csrf_token %}
+
+        </form>
+
+    </main>
+
+{% endblock %}
