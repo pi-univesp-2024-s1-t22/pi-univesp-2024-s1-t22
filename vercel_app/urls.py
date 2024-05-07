@@ -20,6 +20,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('', include('projeto.urls')),
     path('', include('cliente.urls')),
+    path('', include('recebimento.urls')),
     path('', include('despesa.urls')),
     path('login/', LoginView.as_view(template_name='admin/login.html'), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),

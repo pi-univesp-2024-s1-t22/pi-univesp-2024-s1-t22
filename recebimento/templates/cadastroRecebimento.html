@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block conteudo %} 
+
+    <main>
+        <p><a href="/recebimentos">Voltar para a listagem de recebimentos</a></p>
+        <h1>Cadastro de Recebimentos</h1>
+
+        <form action="{% url 'newrecebimento' %}" method="post">
+
+            {{ form.as_p }}
+
+            <button type="submit">Cadastrar</button>
+            {% csrf_token %}
+
+        </form>
+
+    </main>
+
+{% endblock %}

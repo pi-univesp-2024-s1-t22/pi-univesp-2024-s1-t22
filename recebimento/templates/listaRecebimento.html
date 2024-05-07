@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block conteudo %}
+    <main>
+        <h2>Listagem de Recebimentos</h2>
+        <p><a href="/newRecebimento">Adicionar recebimento</a></p>
+        <p><a href="/">Voltar para a página inicial</a></p>
+        <table>
+            <thead>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Data Pagamento
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    Descrição
+                </th>
+            </thead>
+            <tbody>
+
+                {% for recebimento in recebimentos %}
+                    <tr>
+                        <td>
+                            {{ recebimento.cliente.nomeCliente }}
+                        </td>
+                        <td>
+                            {{ recebimento.dataPagamento }}
+                        </td>
+                        <td>
+                            {{ recebimento.valor }}
+                        </td>
+                        <td>
+                            {{ recebimento.descricao }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock %}
