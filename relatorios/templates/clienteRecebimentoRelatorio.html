@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+<main>
+
+    <table>
+        <thead>
+            <th>Cliente</th>
+            <th>Jan</th>
+            <th>Fev</th>
+            <th>Mar</th>
+            <th>Abr</th>
+            <th>Mai</th>
+            <th>Jun</th>
+            <th>Jul</th>
+            <th>Ago</th>
+            <th>Set</th>
+            <th>Out</th>
+            <th>Nov</th>
+            <th>Dez</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+
+            {% for cliente, meses in relatorio.items %}
+
+
+                {% if forloop.last %}
+
+                    <tr>
+
+
+                        <td>{{ cliente }}</td>
+
+                        {% for _ , mes in meses.items %}
+                        
+                            <td>{{ mes }}</td>
+        
+                        {% endfor %}
+
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Total</td>
+        
+                        {% for _, tMes in totalMes.items %}
+        
+                            <td>{{ tMes }}</td>
+        
+                        {% endfor %}
+        
+                        <td>
+                            {{ total }}
+                        </td>
+        
+                    </tr>
+
+                {% else %}
+
+                    <tr>
+
+
+                        <td>{{ cliente }}</td>
+
+                        {% for _ , mes in meses.items %}
+                        
+                            <td>{{ mes }}</td>
+        
+                        {% endfor %}
+
+
+                    </tr>
+
+                {% endif %}
+
+            {% empty %}
+            
+                <tr>
+
+                    <td> Vazio</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</main>
+
+{% endblock %}

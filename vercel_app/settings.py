@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'cliente',
     'recebimento',
     'receitaRecorrente',
-    'despesa'
+    'despesa',
+    'relatorios'
 ]
 
 MIDDLEWARE = [
